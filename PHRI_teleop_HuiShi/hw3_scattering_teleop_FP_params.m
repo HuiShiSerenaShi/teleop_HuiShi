@@ -4,7 +4,7 @@ close all;
 clc
 
 % Input function parameter (sin or step with low pass filter)
-A = 1;
+A = 1.5;
 
 % Low pass frequency cuff off
 Flp1 = 0.5;
@@ -37,7 +37,7 @@ Ks = 4*Km;
 Be = 100; 
 Ke = 200; 
 xe = 2;
-% xe = 0.8;
+xe = 0.8;
 s = tf('s');
 Ts = 0.001;
 

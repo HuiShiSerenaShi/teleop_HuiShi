@@ -9,8 +9,9 @@ A = 1;
 % Low pass frequency cuff off
 Flp1 = 0.5;
 % Sin frequency
-Fc = 0.5; % contact no noise   t50
+
 Fc=1; % free no noise t50
+% Fc = 0.5; % contact no noise   t50
 
 % Human intention controller (PD)
 Ph = 10*1; 
@@ -38,7 +39,8 @@ Ks = 4*Km;
 Be = 100; 
 Ke = 200; 
 xe = 1.5;
-% xe = 0.8;
+xe = 0.5;
+xe = 0.8;
 s = tf('s');
 Ts = 0.001;
 
@@ -47,13 +49,15 @@ d = 10;
 
 % Noise
 noise = 0.001; %
+% noise = 0.000001; %
 % Kalman
 x0 = [0 0];
 Ak = [1 Ts ; 
      0 1 ]; 
 B = [Ts^2/2; Ts];
 C = [1 0];
-q = 10000000; % 
+q = 10000000; %
+q = 1e10;
 Q_m = q*(B*B');
 Q_s = q*(B*B');
 R = 1;
@@ -67,4 +71,7 @@ Hm_init = 0.5; % PP free no noise
 Hs_init = 0.5; % PP
 Hm_init = 0; % PP
 Hs_init = 0; % PP
-
+Hm_init = 5; % PP
+Hs_init = 5; % PP
+%  with noise works good , no change params
+% no noise free works good, no change params. contact t30 fc 0.5, xe0.8

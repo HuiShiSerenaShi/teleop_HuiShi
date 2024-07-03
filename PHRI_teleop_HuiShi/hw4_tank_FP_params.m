@@ -46,6 +46,7 @@ d = 10;
 
 % Noise
 noise = 0.001; %
+noise = 0.0001; %
 % Kalman
 x0 = [0 0];
 Ak = [1 Ts ; 
@@ -62,8 +63,10 @@ Flp = 1; %
 tlcAlpha = 2;
 beta = 0.1;
 Hd = 1;
-Hm_init = 0.5; % FP
-Hs_init = 0.5; % FP
+% Hm_init = 0.5; % FP
+% Hs_init = 0.5; % FP
 % Hm_init = 0.01; % FP
 % Hs_init = 0.01; % FP
+Hm_init = 5; % FP
+Hs_init = 5; % FP
 
